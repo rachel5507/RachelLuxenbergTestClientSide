@@ -1,0 +1,12 @@
+<!-- <input type="text" (keyup)="validateEmail()" [(ngModel)]="email">
+<button (click)="sendEmail()">Send</button>
+<p *ngIf="responseTime">{{ responseTime | date:'medium' }}</p> -->
+
+<div>
+    <h1>press an email adress</h1>
+    <input class="emailInput" type="text" [(ngModel)]="email" (input)="validateEmail()">
+    <button (click)="submitEmail()" [disabled]="!isValidEmail">Submit</button>
+</div>
+<div *ngIf="responseTime">
+    Response time: {{ responseTime }}
+</div>
